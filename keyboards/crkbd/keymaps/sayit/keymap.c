@@ -314,21 +314,27 @@ static void print_status_narrow(void) {
     switch (get_highest_layer(layer_state)) {
         case 0:
             oled_write("Base ", false);
+            autoshift_enable();
             break;
         case 4:
             oled_write("Adj  ", false);
+            autoshift_enable();
             break;
         case 2:
             oled_write("Lower", false);
+            autoshift_enable();
             break;
         case 1:
             oled_write("Games", false);
+            autoshift_disable();
             break;
         case 3:
             oled_write("Raise", false);
+            autoshift_enable();
             break;
         default:
             oled_write("Undef", false);
+            autoshift_enable();
     }
 
     /* caps lock */

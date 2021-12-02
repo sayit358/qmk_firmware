@@ -3,6 +3,7 @@ OLED_DRIVER = SSD1306
 OLED_DRIVER_ENABLE = yes
 WPM_ENABLE = yes
 OCEAN_DREAM_ENABLE = yes
+TAP_DANCE_ENABLE = no
 ifeq ($(strip $(OLED_DRIVER_ENABLE)), yes)
     #... your code here...
 

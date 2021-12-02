@@ -15,12 +15,21 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 #ifdef OCEAN_DREAM_ENABLE
 #    include "ocean_dream.h"
 #endif
+/* // Tap Dance declarations */
+/* enum { */
+/*     TD_ESC_CAPS, */
+/* }; */
+/* // Tap Dance definitions */
+/* qk_tap_dance_action_t tap_dance_actions[] = { */
+/*     // Tap once for Escape, twice for Caps Lock */
+/*     [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS), */
+/* }; */
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -32,7 +41,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           MO(2),   KC_LALT,  KC_SPC,     KC_ENT,   KC_BSPC, MO(2)
                                       //`--------------------------'  `--------------------------'
-
   ),
 
   [2] = LAYOUT_split_3x6_3(
@@ -49,11 +57,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_F1,  KC_F2,    KC_F3, KC_F4,     KC_F5, KC_F6,                          KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
+      XXXXXXX, KC_F1,   KC_F2,  KC_F3,    KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_F11,                       KC_F12, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXX,  XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, _______,  _______,   _______,   _______,XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -69,9 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           MO(2),   _______, _______,    _______,   _______, TO(0)
                                       //`--------------------------'  `--------------------------'
-
   ),
-};
+    };
 
 
 #ifdef OLED_ENABLE
@@ -350,3 +357,4 @@ bool oled_task_user(void) {
     return 0;
 }
 #endif // OLED_ENABLE
+

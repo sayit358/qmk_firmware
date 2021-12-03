@@ -19,10 +19,10 @@ NKRO_ENABLE = yes           # USB Nkey Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
-RGB_MATRIX_ENABLE = no
+RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
 # if firmware size over limit, try this option
-# LTO_ENABLE = yes
+LTO_ENABLE = no
 AUTO_SHIFT_ENABLE = yes
 DEFAULT_FOLDER = crkbd/rev1
 

@@ -23,7 +23,7 @@ RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
 # if firmware size over limit, try this option
 LTO_ENABLE = no
-AUTO_SHIFT_ENABLE = yes
+AUTO_SHIFT_ENABLE = no
 DEFAULT_FOLDER = crkbd/rev1
 
 RGBLIGHT_SUPPORTED = no

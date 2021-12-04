@@ -18,16 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include QMK_KEYBOARD_H
 #include <stdio.h>
 
-/* // Tap Dance declarations */
-/* enum { */
-/*     TD_ESC_CAPS, */
-/* }; */
-/* // Tap Dance definitions */
-/* qk_tap_dance_action_t tap_dance_actions[] = { */
-/*     // Tap once for Escape, twice for Caps Lock */
-/*     [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS), */
-/* }; */
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -106,19 +96,14 @@ bool oled_task_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       switch (get_highest_layer(layer_state)) {
         case 0:
-            autoshift_enable();
             break;
         case 2:
-            autoshift_enable();
             break;
         case 1:
-            autoshift_disable();
             break;
         case 3:
-            autoshift_enable();
             break;
         default:
-            autoshift_enable();
     }
 
   return true;

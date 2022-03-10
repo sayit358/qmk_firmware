@@ -29,6 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           MO(2),   KC_LALT,  KC_SPC,     KC_ENT,   KC_BSPC, MO(2)
                                       //`--------------------------'  `--------------------------'
+                                      /////
   ),
 
   [2] = LAYOUT_split_3x6_3(
@@ -39,17 +40,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_MPLY, KC_MNXT, KC_MPRV, KC_MSTP, KC_LBRC,                      KC_RBRC,  KC_EQL, KC_BSLS, KC_GRV, KC_LGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          MO(3),   KC_CAPS, _______,    _______, _______, MO(3)
+                                          MO(3),   _______, _______,    _______, _______, MO(3)
                                       //`--------------------------'  `--------------------------'
   ),
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, KC_F1,   KC_F2,  KC_F3,    KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, XXXXXXX,
+      KC_CAPS, KC_F1,   KC_F2,  KC_F3,    KC_F4,   KC_F5,                        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, KC_F11,                       KC_F12, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG(1),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, _______,  _______,   _______,   _______,XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -104,6 +105,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case 3:
             break;
         default:
+            break;
     }
 
   return true;
